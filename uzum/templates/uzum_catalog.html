@@ -65,7 +65,7 @@
                                 <ul>
                                     <li><a href="#"><span>Smartfonlar uchun aksessuarlar</span> <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#"><span>Qulay telefonlar</span> <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#"><span>Smartfonlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'uzum:product_list' %}"><span>Smartfonlar</span> <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#"><span>Aloqa va tariflar</span> <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#"><span>Statsionar telefonlar</span> <i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
@@ -579,62 +579,62 @@
     }
 </style>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Kategoriya ro'yxati interaktivligi
-            const categoryItems = document.querySelectorAll('.category-list li');
-            categoryItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    // Faol elementni yangilash
-                    categoryItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Bu yerda sahifani yangilash yoki ma'lumotlarni yuklash logikasi bo'lishi mumkin
-                    console.log('Tanlangan kategoriya: ', this.querySelector('span').textContent);
-                });
-            });
-            
-            // Qidiruv funksiyasi
-            const searchInput = document.getElementById('searchInput');
-            searchInput.addEventListener('keyup', function(e) {
-                if (e.key === 'Enter') {
-                    // Qidiruvni amalga oshirish
-                    console.log('Qidiruv so\'rovi: ', this.value);
-                }
-            });
-            
-            // Filtrlarni qo'llash
-            const applyFiltersBtn = document.getElementById('applyFilters');
-            applyFiltersBtn.addEventListener('click', function() {
-                const minPrice = document.getElementById('minPrice').value;
-                const maxPrice = document.getElementById('maxPrice').value;
-                const selectedBrands = [];
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Kategoriya ro'yxati interaktivligi
+        const categoryItems = document.querySelectorAll('.category-list li');
+        categoryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Faol elementni yangilash
+                categoryItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
                 
-                document.querySelectorAll('input[name="brand"]:checked').forEach(checkbox => {
-                    selectedBrands.push(checkbox.value);
-                });
-                
-                console.log('Filtrlar qo\'llandi:');
-                console.log('Min narx: ', minPrice);
-                console.log('Max narx: ', maxPrice);
-                console.log('Tanlangan brendlar: ', selectedBrands);
-                
-                // Bu yerda filtrlarni qo'llash logikasi bo'lishi mumkin
-            });
-            
-            // Subkategoriya kartalariga hover effektini qo'shish
-            const subcategoryCards = document.querySelectorAll('.subcategory-card');
-            subcategoryCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                    this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
-                });
+                // Bu yerda sahifani yangilash yoki ma'lumotlarni yuklash logikasi bo'lishi mumkin
+                console.log('Tanlangan kategoriya: ', this.querySelector('span').textContent);
             });
         });
-    </script>
+        
+        // Qidiruv funksiyasi
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                // Qidiruvni amalga oshirish
+                console.log('Qidiruv so\'rovi: ', this.value);
+            }
+        });
+        
+        // Filtrlarni qo'llash
+        const applyFiltersBtn = document.getElementById('applyFilters');
+        applyFiltersBtn.addEventListener('click', function() {
+            const minPrice = document.getElementById('minPrice').value;
+            const maxPrice = document.getElementById('maxPrice').value;
+            const selectedBrands = [];
+            
+            document.querySelectorAll('input[name="brand"]:checked').forEach(checkbox => {
+                selectedBrands.push(checkbox.value);
+            });
+            
+            console.log('Filtrlar qo\'llandi:');
+            console.log('Min narx: ', minPrice);
+            console.log('Max narx: ', maxPrice);
+            console.log('Tanlangan brendlar: ', selectedBrands);
+            
+            // Bu yerda filtrlarni qo'llash logikasi bo'lishi mumkin
+        });
+        
+        // Subkategoriya kartalariga hover effektini qo'shish
+        const subcategoryCards = document.querySelectorAll('.subcategory-card');
+        subcategoryCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+            });
+        });
+    });
+</script>
 {% endblock %}

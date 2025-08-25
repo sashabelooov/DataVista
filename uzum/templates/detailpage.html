@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Details - TechMarket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            padding: 25px;
+        }
+        
+        .gallery {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+        
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            padding: 5px;
+            background: #f6f6f6;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #4285f4;
+        }
+        
+        .details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .badge {
+            background: #ff4444;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            color: #202124;
+            margin-bottom: 15px;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .stars {
+            color: #f8b400;
+            margin-right: 10px;
+        }
+        
+        .reviews {
+            color: #5f6368;
+            font-size: 14px;
+        }
+        
+        .price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .current-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #202124;
+            margin-right: 15px;
+        }
+        
+        .original-price {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: #9aa0a6;
+        }
+        
+        .discount {
+            color: #34a853;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+        
+        .description {
+            margin-bottom: 25px;
+            color: #5f6368;
+            line-height: 1.8;
+        }
+        
+        .specs {
+            margin-bottom: 25px;
+        }
+        
+        .specs h3 {
+            margin-bottom: 15px;
+            color: #202124;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .spec-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .spec-icon {
+            width: 24px;
+            margin-right: 10px;
+            color: #4285f4;
+        }
+        
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .quantity {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 8px 12px;
+        }
+        
+        .quantity-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #5f6368;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        
+        .add-to-cart {
+            flex: 1;
+            background: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .add-to-cart:hover {
+            background: #3367d6;
+        }
+        
+        .buy-now {
+            flex: 1;
+            background: #34a853;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .buy-now:hover {
+            background: #2e8b47;
+        }
+        
+        .wishlist {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5f6368;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .wishlist:hover {
+            color: #ff4444;
+            border-color: #ff4444;
+        }
+        
+        .delivery {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .delivery h3 {
+            margin-bottom: 15px;
+            color: #202124;
+        }
+        
+        .delivery-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .delivery-icon {
+            width: 24px;
+            margin-right: 12px;
+            color: #34a853;
+        }
+        
+        .guarantee {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .guarantee-icon {
+            font-size: 24px;
+            color: #34a853;
+            margin-right: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gallery">
+            <img id="main-image" src="https://via.placeholder.com/600x500/4285f4/ffffff?text=Premium+Smartphone" alt="Smartphone" class="main-image">
+            <div class="thumbnails">
+                <img src="https://via.placeholder.com/150/4285f4/ffffff?text=Front" alt="Front view" class="thumbnail active" onclick="changeImage(this)">
+                <img src="https://via.placeholder.com/150/34a853/ffffff?text=Back" alt="Back view" class="thumbnail" onclick="changeImage(this)">
+                <img src="https://via.placeholder.com/150/ea4335/ffffff?text=Side" alt="Side view" class="thumbnail" onclick="changeImage(this)">
+                <img src="https://via.placeholder.com/150/fbbc04/ffffff?text=Accessories" alt="With accessories" class="thumbnail" onclick="changeImage(this)">
+            </div>
+        </div>
+        
+        <div class="details">
+            <div class="badge">BESTSELLER</div>
+            <h1>Premium Smartphone XYZ 512GB</h1>
+            
+            <div class="rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="reviews">1,248 reviews</div>
+            </div>
+            
+            <div class="price">
+                <div class="current-price">$899.99</div>
+                <div class="original-price">$1,099.99</div>
+                <div class="discount">18% off</div>
+            </div>
+            
+            <p class="description">
+                Experience the ultimate in mobile technology with our flagship smartphone. Featuring a stunning 6.7-inch OLED display, powerful processor, and professional-grade camera system. With 512GB of storage, you'll have plenty of space for all your photos, videos, and apps.
+            </p>
+            
+            <div class="specs">
+                <h3>Key Specifications</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <i class="fas fa-microchip spec-icon"></i>
+                        <span>Octa-core Processor</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-mobile-alt spec-icon"></i>
+                        <span>6.7" OLED Display</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-camera spec-icon"></i>
+                        <span>108MP Triple Camera</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-battery-full spec-icon"></i>
+                        <span>All-day Battery</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-sd-card spec-icon"></i>
+                        <span>512GB Storage</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-memory spec-icon"></i>
+                        <span>12GB RAM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+                    <input type="text" class="quantity-input" value="1" id="quantity">
+                    <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
+                </div>
+                
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                
+                <button class="buy-now">
+                    Buy Now
+                </button>
+                
+                <button class="wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            
+            <div class="delivery">
+                <h3>Delivery Options</h3>
+                <div class="delivery-option">
+                    <i class="fas fa-truck delivery-icon"></i>
+                    <div>
+                        <strong>Free Delivery</strong>: Get it by tomorrow
+                    </div>
+                </div>
+                <div class="delivery-option">
+                    <i class="fas fa-store delivery-icon"></i>
+                    <div>
+                        <strong>Pickup</strong>: Available at nearby stores
+                    </div>
+                </div>
+                
+                <div class="guarantee">
+                    <i class="fas fa-shield-alt guarantee-icon"></i>
+                    <div>
+                        <strong>2-Year Manufacturer Warranty</strong><br>
+                        <span>30-day money-back guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(element) {
+            // Update main image
+            document.getElementById('main-image').src = element.src.replace('150', '600').replace('150', '500');
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+        
+        function updateQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            let quantity = parseInt(quantityInput.value);
+            quantity += change;
+            
+            if (quantity < 1) quantity = 1;
+            if (quantity > 10) quantity = 10;
+            
+            quantityInput.value = quantity;
+        }
+        
+        // Toggle wishlist button
+        document.querySelector('.wishlist').addEventListener('click', function() {
+            this.classList.toggle('active');
+            if (this.classList.contains('active')) {
+                this.innerHTML = '<i class="fas fa-heart"></i>';
+            } else {
+                this.innerHTML = '<i class="far fa-heart"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
