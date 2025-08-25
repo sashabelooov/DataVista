@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}MarketPlaces{% endblock %}
+
+{% block content %}
+<section class="marketplaces" style="padding: 120px 0 80px;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Marketplaces</h2>
+        </div>
+        
+        
+        <div class="marketplaces-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Marketplace Card 1 -->
+            {% for m in marketplace %}
+            <div class="marketplace-card" data-country="uzbekistan" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s;">
+                <div class="marketplace-image" style="height: 280px; overflow: hidden;">
+                    <img src="{{ m.image.url }}" alt="{{ m.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+                <div class="marketplace-content" style="padding: 20px;">
+                    <div class="marketplace-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h3 style="font-size: 1.3rem; font-weight: 600;">{{m.name}}</h3>
+                        <div class="rating" style="display: flex; align-items: center; background: #f5f7fb; padding: 5px 10px; border-radius: 20px;">
+                            <span style="color: #fca311; margin-right: 5px;"><i class="fas fa-star"></i></span>
+                            <span style="font-weight: 500;">{{ m.rating }}</span>
+                        </div>
+                    </div>
+                    <div class="marketplace-details" style="margin-bottom: 20px;">
+                        <div class="detail-item" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="color: var(--gray);">Country:</span>
+                            <span style="font-weight: 500;">{{ m.country }}</span>
+                        </div>
+                        <div class="detail-item" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="color: var(--gray);">Products:</span>
+                            <span style="font-weight: 500;">2.5M+</span>
+                        </div>
+                        <div class="detail-item" style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--gray);">Sellers:</span>
+                            <span style="font-weight: 500;">15K+</span>
+                        </div>
+                    </div>
+                    <a href="{% url 'catalog_redirect' m.slug %}" class="btn btn-primary" style="width: 100%; text-align: center;">Catalogs</a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<script>
+    // Filter functionality for marketplaces
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.marketplaces-filter button');
+        const marketplaceCards = document.querySelectorAll('.marketplace-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Show/hide cards based on filter
+                marketplaceCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-country') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Add hover effect to cards
+        marketplaceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+            });
+        });
+    });
+</script>
+{% endblock %}

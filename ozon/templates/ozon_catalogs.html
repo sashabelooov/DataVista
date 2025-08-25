@@ -1,0 +1,640 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}DataVista - Katalog{% endblock %}
+
+{% block content %}
+    <section class="catalog-section">
+        <div class="container">
+            <div class="catalog-layout">
+                <!-- Sidebar -->
+                <div class="catalog-sidebar">
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-list"></i> Katalog</h3>
+                        <div class="search-box">
+                            <div>
+                                <input type="text" placeholder="Katalogdan qidirish..." id="searchInput">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <ul class="category-list">
+                            <li class="active"><span>Elektronika</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Mashina texnikasi</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Kiyim</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Poyabzallar</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Aksessuarlar</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Go'zallik va parvarish</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Salomatlik</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Uy-ro'zg'or buyumlari</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Qurilish va ta'mirlash</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Avtotovarlar</span> <i class="fas fa-chevron-right"></i></li>
+                            <li><span>Bolalar tovarlari</span> <i class="fas fa-chevron-right"></i></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                
+                <!-- Main Content -->
+                <div class="catalog-main">
+                    <div class="breadcrumb">
+                        <a href="#">Bosh sahifa</a>
+                        <span>/</span>
+                        <span>Elektronika</span>
+                    </div>
+                    
+                    <!-- <div class="category-header">
+                        <h1>Elektronika</h1>
+                        <p>Smartfonlar, noutbuklar, televizorlar va boshqa elektron qurilmalar keng assortimentda</p>
+                        <div class="stats">
+                            <span>1352 ta mahsulot</span>
+                            <div class="divider"></div>
+                            <span>12 ta toifalar</span>
+                        </div>
+                    </div> -->
+                    
+                    <div class="subcategories-grid">
+                        <!-- Subcategory Cards (same as your code) -->
+                        <!-- Subcategory Card 1 -->
+                        <div class="subcategory-card">
+                            <div class="subcategory-header">
+                                <h3><i class="fas fa-mobile-alt"></i> Smartfonlar va telefonlar</h3>
+                                <p>324 ta mahsulot</p>
+                            </div>
+                            <div class="subcategory-links">
+                                <ul>
+                                    <li><a href="#"><span>Smartfonlar uchun aksessuarlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Qulay telefonlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Smartfonlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Aloqa va tariflar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Statsionar telefonlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Subcategory Card 2 -->
+                        <div class="subcategory-card">
+                            <div class="subcategory-header">
+                                <h3><i class="fas fa-laptop"></i> Kompyuter texnikasi</h3>
+                                <p>278 ta mahsulot</p>
+                            </div>
+                            <div class="subcategory-links">
+                                <ul>
+                                    <li><a href="#"><span>Kompyuter aksessuarlari</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Kompyuter tarkibiy qismlari</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Kompyuterlarni tozalash</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Modemlar va routerlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Boshqa aksessuarlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Subcategory Card 3 -->
+                        <div class="subcategory-card">
+                            <div class="subcategory-header">
+                                <h3><i class="fas fa-gamepad"></i> Geymerlar uchun mahsulotlar</h3>
+                                <p>156 ta mahsulot</p>
+                            </div>
+                            <div class="subcategory-links">
+                                <ul>
+                                    <li><a href="#"><span>Oʻyin pristavkalari</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Oʻyin sichqonchalari</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Oʻyin klaviaturalari</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Ovoz uskunalari</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Boshqa aksessuarlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Subcategory Card 4 -->
+                        <div class="subcategory-card">
+                            <div class="subcategory-header">
+                                <h3><i class="fas fa-house-user"></i> Aqlli uy va xavfsizlik</h3>
+                                <p>98 ta mahsulot</p>
+                            </div>
+                            <div class="subcategory-links">
+                                <ul>
+                                    <li><a href="#"><span>Videokuzatuv</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Aqlli uy tizimlari</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Xavfsizlik signalizatsiyasi</span> <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Subcategory Card 5 -->
+                        <div class="subcategory-card">
+                            <div class="subcategory-header">
+                                <h3><i class="fas fa-tablet-alt"></i> Noutbuklar, planshetlar</h3>
+                                <p>210 ta mahsulot</p>
+                            </div>
+                            <div class="subcategory-links">
+                                <ul>
+                                    <li><a href="#"><span>Noutbuklar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Planshetlar va elektron kitoblar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Noutbuk uchun aksessuarlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Subcategory Card 6 -->
+                        <div class="subcategory-card">
+                            <div class="subcategory-header">
+                                <h3><i class="fas fa-headphones"></i> Ovoz uskunalari</h3>
+                                <p>142 ta mahsulot</p>
+                            </div>
+                            <div class="subcategory-links">
+                                <ul>
+                                    <li><a href="#"><span>Ovoz uskunalari</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Audio texnika</span> <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#"><span>Proektorlar uchun aksessuarlar</span> <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-banner">
+                        <h2>Haftalik aksiya! Elektronika bo'limida</h2>
+                        <p>Chegirmalar 70% gacha. Taklif muddati cheklangan</p>
+                        <a href="#" class="btn">Hoziroq xarid qiling</a>
+                    </div>
+                    
+                    <div class="other-categories">
+                        <h2>Boshqa kategoriyalar</h2>
+                        <div class="categories-grid">
+                            <a href="#" class="category-item">
+                                <i class="fas fa-tshirt"></i>
+                                <h3>Kiyim</h3>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-shoe-prints"></i>
+                                <h3>Poyabzallar</h3>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-home"></i>
+                                <h3>Uy-ro'zg'or</h3>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-car"></i>
+                                <h3>Avtotovarlar</h3>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-child"></i>
+                                <h3>Bolalar tovarlari</h3>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-utensils"></i>
+                                <h3>Oziq-ovqat</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<style>
+    :root {
+        --primary: #4361ee;
+        --secondary: #3a0ca3;
+        --dark: #2b2d42;
+        --gray: #6c757d;
+        --light: #f8f9fa;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f5f7fa;
+        color: var(--dark);
+    }
+    
+    .catalog-section {
+        padding: 120px 0 80px;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    .catalog-layout {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .catalog-sidebar {
+        width: 280px;
+        flex-shrink: 0;
+    }
+    
+    .sidebar-card, .filter-card {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+    }
+    
+    .sidebar-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+    }
+    
+    .search-box {
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .search-box input {
+        width: 100%;
+        padding: 12px 15px 12px 40px;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        font-size: 0.9rem;
+    }
+    
+    .search-box i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gray);
+    }
+    
+    .category-list {
+        list-style: none;
+    }
+    
+    .category-list li {
+        padding: 12px 15px;
+        border-radius: 6px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    
+    .category-list li:hover {
+        background-color: rgba(67, 97, 238, 0.1);
+        color: var(--primary);
+    }
+    
+    .category-list li.active {
+        background-color: rgba(67, 97, 238, 0.1);
+        color: var(--primary);
+        font-weight: 500;
+    }
+    
+    .filter-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        color: var(--dark);
+    }
+    
+    .filter-group {
+        margin-bottom: 20px;
+    }
+    
+    .filter-group h4 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        color: var(--gray);
+    }
+    
+    .filter-group input[type="number"] {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        font-size: 0.9rem;
+    }
+    
+    .filter-group .price-inputs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .filter-group label {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        cursor: pointer;
+    }
+    
+    .filter-group input[type="checkbox"] {
+        margin-right: 8px;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+    
+    .btn:hover {
+        background-color: var(--secondary);
+    }
+    
+    .btn-primary {
+        background-color: var(--primary);
+    }
+    
+    .catalog-main {
+        flex-grow: 1;
+    }
+    
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        color: var(--gray);
+    }
+    
+    .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+    
+    .breadcrumb span {
+        margin: 0 10px;
+    }
+    
+    .category-header {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 25px;
+    }
+    
+    .category-header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: var(--dark);
+    }
+    
+    .category-header p {
+        color: var(--gray);
+        margin-bottom: 15px;
+    }
+    
+    .category-header .stats {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .category-header .stats span {
+        font-size: 0.9rem;
+        color: var(--gray);
+    }
+    
+    .category-header .divider {
+        height: 16px;
+        width: 1px;
+        background: #e2e8f0;
+    }
+    
+    .subcategories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .subcategory-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+    }
+    
+    .subcategory-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .subcategory-header {
+        padding: 20px;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    
+    .subcategory-header h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+    }
+    
+    .subcategory-header p {
+        font-size: 0.9rem;
+        color: var(--gray);
+    }
+    
+    .subcategory-links {
+        padding: 20px;
+    }
+    
+    .subcategory-links ul {
+        list-style: none;
+    }
+    
+    .subcategory-links li {
+        margin-bottom: 12px;
+    }
+    
+    .subcategory-links a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: var(--dark);
+        font-size: 0.95rem;
+        transition: color 0.3s;
+    }
+    
+    .subcategory-links a:hover {
+        color: var(--primary);
+    }
+    
+    .promo-banner {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        border-radius: 10px;
+        padding: 30px;
+        color: white;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .promo-banner h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .promo-banner p {
+        margin-bottom: 20px;
+        opacity: 0.9;
+    }
+    
+    .promo-banner .btn {
+        background: white;
+        color: var(--primary);
+        font-weight: 600;
+        padding: 10px 25px;
+    }
+    
+    .other-categories {
+        margin-bottom: 30px;
+    }
+    
+    .other-categories h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+    }
+    
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .category-item {
+        background: white;
+        border-radius: 10px;
+        padding: 20px 15px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        text-decoration: none;
+        transition: transform 0.3s;
+    }
+    
+    .category-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .category-item i {
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+    }
+    
+    .category-item h3 {
+        font-size: 0.95rem;
+        color: var(--dark);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 992px) {
+        .catalog-layout {
+            flex-direction: column;
+        }
+        
+        .catalog-sidebar {
+            width: 100%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .subcategories-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .categories-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .categories-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Kategoriya ro'yxati interaktivligi
+            const categoryItems = document.querySelectorAll('.category-list li');
+            categoryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Faol elementni yangilash
+                    categoryItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Bu yerda sahifani yangilash yoki ma'lumotlarni yuklash logikasi bo'lishi mumkin
+                    console.log('Tanlangan kategoriya: ', this.querySelector('span').textContent);
+                });
+            });
+            
+            // Qidiruv funksiyasi
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    // Qidiruvni amalga oshirish
+                    console.log('Qidiruv so\'rovi: ', this.value);
+                }
+            });
+            
+            // Filtrlarni qo'llash
+            const applyFiltersBtn = document.getElementById('applyFilters');
+            applyFiltersBtn.addEventListener('click', function() {
+                const minPrice = document.getElementById('minPrice').value;
+                const maxPrice = document.getElementById('maxPrice').value;
+                const selectedBrands = [];
+                
+                document.querySelectorAll('input[name="brand"]:checked').forEach(checkbox => {
+                    selectedBrands.push(checkbox.value);
+                });
+                
+                console.log('Filtrlar qo\'llandi:');
+                console.log('Min narx: ', minPrice);
+                console.log('Max narx: ', maxPrice);
+                console.log('Tanlangan brendlar: ', selectedBrands);
+                
+                // Bu yerda filtrlarni qo'llash logikasi bo'lishi mumkin
+            });
+            
+            // Subkategoriya kartalariga hover effektini qo'shish
+            const subcategoryCards = document.querySelectorAll('.subcategory-card');
+            subcategoryCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+                });
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,296 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Home - DataVista{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Advanced Analytics for E-commerce Businesses</h1>
+                <p>Track performance across Uzum, Ozon, Asaxiy and other major platforms with our comprehensive analytics dashboard.</p>
+                <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*rQ3d_dKG7V2JhX8SrUjs6g.png" alt="Dashboard Preview">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Platforms Section -->
+<section class="platforms">
+    <div class="container">
+        <h2>Supported Platforms</h2>
+        <div class="platform-logos">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ8gkpGc-5A2ksIr75BG2kea7fI-puISW7AA&s" alt="Uzum" class="platform-logo">
+            <img src="https://yt3.googleusercontent.com/5C4IHPmCS-t9uFdLTo_sSRSC2YRdrmk5ksh5BRzHtm05gIthstvLVsc_7DbxgII8zHPHZcPr4Q=s900-c-k-c0x00ffffff-no-rj" alt="Ozon" class="platform-logo">
+        </div>
+    </div>
+</section>
+
+<!-- Analytics Preview -->
+<section class="analytics-preview">
+    <div class="container">
+        <div class="section-header">
+            <h2>Powerful Analytics at Your Fingertips</h2>
+            <p>Gain valuable insights with our comprehensive analytics tools designed for e-commerce businesses.</p>
+        </div>
+        
+        <div class="charts-grid">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Sales Performance</h3>
+                    <div class="chart-actions">
+                        <button>Daily</button>
+                        <button>Weekly</button>
+                        <button>Monthly</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Traffic Sources</h3>
+                    <div class="chart-actions">
+                        <button>All</button>
+                        <button>Filter</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="trafficChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Product Categories</h3>
+                    <div class="chart-actions">
+                        <button>View All</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Customer Satisfaction</h3>
+                    <div class="chart-actions">
+                        <button>This Month</button>
+                        <button>Last Month</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="satisfactionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-header">
+            <h2>Key Features</h2>
+            <p>Everything you need to optimize your e-commerce performance across multiple platforms</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Multi-Platform Tracking</h3>
+                <p>Monitor your performance across all major e-commerce platforms from a single dashboard.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Real-Time Analytics</h3>
+                <p>Get up-to-the-minute data on sales, traffic, and customer behavior.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Competitor Analysis</h3>
+                <p>See how you stack up against competitors and identify market opportunities.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered Insights</h3>
+                <p>Receive actionable recommendations based on your data patterns.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Access</h3>
+                <p>Access your analytics on the go with our mobile app.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Custom Alerts</h3>
+                <p>Set up notifications for important changes in your metrics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Choose the plan that works best for your business</p>
+        </div>
+        
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$49<span>/month</span></div>
+                <p>Perfect for small businesses getting started with analytics</p>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Track up to 3 platforms</li>
+                    <li><i class="fas fa-check"></i> Basic analytics reports</li>
+                    <li><i class="fas fa-check"></i> 30-day data history</li>
+                    <li><i class="fas fa-check"></i> Email support</li>
+                    <li><i class="fas fa-times"></i> Competitor analysis</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Get Started</a>
+            </div>
+            
+            <div class="pricing-card popular">
+                <h3>Professional</h3>
+                <div class="price">$99<span>/month</span></div>
+                <p>Ideal for growing businesses needing deeper insights</p>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Track up to 10 platforms</li>
+                    <li><i class="fas fa-check"></i> Advanced analytics reports</li>
+                    <li><i class="fas fa-check"></i> 1-year data history</li>
+                    <li><i class="fas fa-check"></i> Priority support</li>
+                    <li><i class="fas fa-check"></i> Basic competitor analysis</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">$249<span>/month</span></div>
+                <p>For large businesses requiring comprehensive analytics</p>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Unlimited platform tracking</li>
+                    <li><i class="fas fa-check"></i> Custom analytics reports</li>
+                    <li><i class="fas fa-check"></i> Unlimited data history</li>
+                    <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                    <li><i class="fas fa-check"></i> Advanced competitor analysis</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Contact Sales</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About MarketInsight</h2>
+                <p>MarketInsight was founded in 2020 with a mission to help e-commerce businesses make data-driven decisions. Our team of data scientists, developers, and e-commerce experts have built a comprehensive analytics platform that provides actionable insights.</p>
+                <p>Today, we serve over 5,000 businesses across multiple countries, helping them increase sales and optimize their operations through powerful analytics.</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>5,000+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Platforms Supported</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99.9%</h3>
+                        <p>Uptime Guarantee</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-team">
+                <h3>Our Leadership Team</h3>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+                        <h4>John Smith</h4>
+                        <p>CEO & Founder</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+                        <h4>Sarah Johnson</h4>
+                        <p>CTO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Team Member">
+                        <h4>Michael Brown</h4>
+                        <p>Head of Analytics</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Team Member">
+                        <h4>Emily Davis</h4>
+                        <p>Head of Customer Success</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <h2>Start Growing Your Business Today</h2>
+        <p>Join thousands of e-commerce businesses using MarketInsight to optimize their performance and increase sales.</p>
+        <a href="#" class="btn">Get Started for Free</a>
+    </div>
+</section>
+
+
+
+<!-- Contact Modal -->
+<div class="modal" id="contact-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
